@@ -1,0 +1,18 @@
+<div >
+  <div class="modal-header"  style="background-color:#00aed8;border-top-left-radius:5px;border-top-right-radius:5px;">
+      <button type="button" class="close" (click)="bsModalRef.hide()"><i class="fa fa-times pull-right"></i></button>
+      <h4 class="modal-title" style="color:white;font-weight:400">{{title}}</h4>
+  </div>
+  <div class="modal-body">
+      <div class="form-horizontal">
+          <div class="form-group">
+              <div class="col-sm-12 center" [innerHTML]="message">
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal-footer center">
+      <a [style.display]="dialogButtonCommands ? 'none' : ''" href="javascript:void(0);" class="btn btn-default center" style="margin-right: 10px" (click)="close()">Close</a>
+      <a [style.display]="!dialogButtonCommands ? 'none' : ''" *ngFor="let buttonCommand of dialogButtonCommands" href="javascript:void(0);" style="margin-right: 10px; width: 100px" class="btn btn-default" (click)="closeWithCommand(buttonCommand);">{{ buttonCommand.Name }}</a>
+  </div>
+</div>

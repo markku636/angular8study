@@ -1,0 +1,7 @@
+{
+  "HOST_API": "http://development.server.com/prod",
+  "API_ENDPOINTS": {
+    "USER": "/api/v1/user"
+  },
+  "TOKEN": "development token"  
+}

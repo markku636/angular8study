@@ -1,0 +1,29 @@
+<div>
+  <ul class="pagination pagination-v1">
+    <li class="pull-left margin-r-5">
+      <select name="sltpageSize" class="form-control" id="sltpageSize" [(ngModel)]="this.pageModel.pageSize" (change)="this.setPageSize()">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="ALL">All</option>
+      </select>
+    </li>
+
+    <!-- <li><a href="javascript:void(0)" [class.disabled]="this.pageModel.pageIndex === 1" class="prev" (click)="this.setPageIndex(1)">&lt;&lt;</a></li> -->
+    <li><a href="javascript:void(0)" [class.disabled]="this.pageModel.pageIndex === 1" class="prev" (click)="this.setPageIndex(this.pageModel.pageIndex-1)">PREV</a></li>
+    <li *ngIf="(this.pageModel.startPg-10)>=1">
+      <a href="javascript:void(0)" (click)="this.setPageIndex(this.pageModel.startPg-1)">...{{this.pageModel.startPg-1}}</a>
+    </li>
+    <li *ngFor="let pn of this.pageModel.pageNumArray">
+      <a href="javascript:void(0)" (click)="this.setPageIndex(pn)" [ngClass]="{active: pn==this.pageModel.pageIndex}">{{pn}}</a>
+    </li>
+
+
+    <li *ngIf="this.pageModel.pageNumArrayMax < this.pageModel.pageTotal">
+      <a href="javascript:void(0)" (click)="this.setPageIndex(this.pageModel.pageNumArrayMax+1)">{{this.pageModel.pageNumArrayMax+1}}...</a>
+    </li>
+    <li><a href="javascript:void(0)" (click)="this.setPageIndex(this.pageModel.pageIndex+1)" class="next" [class.disabled]="this.pageModel.pageIndex === this.pageModel.pageTotal">NEXT</a></li>
+    <!-- <li><a href="javascript:void(0)" (click)="this.setPageIndex(this.pageModel.pageTotal)" class="next" [class.disabled]="this.pageIndex === this.pageModel.pageTotal">&gt;&gt;</a></li> -->
+  </ul>
+</div>
