@@ -22,9 +22,6 @@ import { NavbarPaginationComponent } from './components/shared/pagination/navbar
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PromissionguardGuard } from './guard/promissionguard.guard';
 import { HomeComponent } from './components/home/home.component';
-
-
-// views
 import { CampaignComponent } from './components/campaign/campaign.component';
 import { Select2DemoComponent } from './components/shared/select2/select2-demo/select2-demo.component';
 import { DefaultLayoutComponent } from './components/shared/layouts/default-layout/default-layout.component';
@@ -34,15 +31,17 @@ import { JwtErrorInterceptor } from './commons/jwt-error-interceptor';
 import { SSOLoginComponent } from './components/ssologin/ssologin.component';
 import { DialogService } from './components/shared/dialog/dialog.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SleepPreloadingStrategy } from './preloading/sleep.preloading.strategy';
-import { RoutePreloadingStrategy } from './preloading/route.preloading.strategy';
 import { QuicklinkStrategy, QuicklinkModule } from './preloading/quick-link';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodoDonePipe, FetchJsonPipe } from './commons/common';
+import { DynamicImportModuleComponent } from './components/dynamic-import-module/dynamic-import-module.component';
+import { PrefetchComponent } from './components/prefetch/prefetch.component';
+import { ClientSideCacheComponent } from './components/client-side-cache/client-side-cache.component';
 
-
-
-
+import { SleepPreloadingStrategy } from './preloading/sleep.preloading.strategy';
+import { RoutePreloadingStrategy } from './preloading/route.preloading.strategy';
+import { Prefetch1Component } from './components/prefetch1/prefetch1.component';
+import { Prefetch2Component } from './components/prefetch2/prefetch2.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +61,8 @@ import { TodoDonePipe, FetchJsonPipe } from './commons/common';
     SSOLoginComponent,
     TodoComponent,        
     TodoDonePipe,
-    FetchJsonPipe
+    FetchJsonPipe,    
+    DynamicImportModuleComponent, PrefetchComponent, ClientSideCacheComponent, Prefetch1Component, Prefetch2Component
   ],
   imports: [
     BrowserModule,

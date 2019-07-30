@@ -7,26 +7,12 @@ import { Component, OnInit, Compiler } from '@angular/core';
 })
 export class LazyloadComponent implements OnInit {
 
-  constructor(private compiler: Compiler) { }
+  constructor() { 
 
-  lazyModuleFactory: any;
-  lazyComponent: any;
-  
 
+  }
 
   ngOnInit() {
-  }
-
-  dynamicLoadLazyloadModule1() {
-    import('../lazyload1/lazyload1.module').then(
-      loadedModule => {
-        debugger;
-        const lazyPageModule = loadedModule.Lazyload1Module;
-        this.compiler.compileModuleAsync(lazyPageModule).then(moduleFactory => {
-          this.lazyModuleFactory = moduleFactory;
-          this.lazyComponent = lazyPageModule.EntryComponent;
-        });
-      })
-  }
-
+    console.log('hello')
+  } 
 }
