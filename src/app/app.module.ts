@@ -40,8 +40,7 @@ import { ClientSideCacheComponent } from './components/client-side-cache/client-
 
 import { SleepPreloadingStrategy } from './preloading/sleep.preloading.strategy';
 import { RoutePreloadingStrategy } from './preloading/route.preloading.strategy';
-import { Prefetch1Component } from './components/prefetch1/prefetch1.component';
-import { Prefetch2Component } from './components/prefetch2/prefetch2.component';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +61,7 @@ import { Prefetch2Component } from './components/prefetch2/prefetch2.component';
     TodoComponent,        
     TodoDonePipe,
     FetchJsonPipe,    
-    DynamicImportModuleComponent, PrefetchComponent, ClientSideCacheComponent, Prefetch1Component, Prefetch2Component
+    DynamicImportModuleComponent, PrefetchComponent, ClientSideCacheComponent,
   ],
   imports: [
     BrowserModule,

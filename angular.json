@@ -63,10 +63,10 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": true,
-              "aot": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
