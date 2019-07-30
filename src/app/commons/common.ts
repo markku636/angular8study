@@ -10,7 +10,7 @@ import { HttpClient }          from '@angular/common/http';
 export class TodoDonePipe implements PipeTransform {
 
   transform(todoItem: TodoItem, displayNotDone: boolean): any {
-    // debugger
+     debugger
     if (todoItem.done) {
       return '(已完成)';
     } else if (displayNotDone) {
