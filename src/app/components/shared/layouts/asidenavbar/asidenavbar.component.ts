@@ -28,8 +28,8 @@ export class AsidenavbarComponent implements OnInit {
 
       new Menu(5, 'Prefetch Load Module', '/bms/prefetch', "fa fa-user fa-1x"),
       // new Menu(6, 'Client Side Cache', '/bms/client-side-cache', "fa fa-user fa-1x"),
-      new Menu(7, 'Pipe Caching', '/bms/pipe', "fa fa-user fa-1x"),
-      new Menu(8, 'HttpRequest Cache', '/bms/user', "fa fa-user fa-1x"),      
+      new Menu(7, 'Prue Pipe', '/bms/pipe', "fa fa-user fa-1x"),
+      // new Menu(8, 'HttpRequest Cache', '/bms/user', "fa fa-user fa-1x"),      
 
     ]
         

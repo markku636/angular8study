@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { Lazyload1RoutingModule } from './lazyload1-routing.module';
 import { Lazyload1Component } from './lazyload1.component';
 
-
 @NgModule({
   declarations: [Lazyload1Component],
   imports: [
