@@ -4,7 +4,10 @@ import { Observable } from 'rxjs/Rx';
 
 export class SleepPreloadingStrategy implements PreloadingStrategy {
     preload(route: Route, fn: () => Observable<boolean>): Observable<boolean> {
-        debugger;
-        return Observable.of(true).delay(5000).flatMap((_: boolean) => fn());
+
+        return Observable.of(true).delay(5000).do(() => {
+            console.log("loaded");            
+
+        }).flatMap((_: boolean) => fn());
     }
 }

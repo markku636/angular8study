@@ -33,7 +33,7 @@ export class AuthenticationService {
         if (userInfo && userInfo.jwt.accessToken) {
           localStorage.setItem('currentUser', JSON.stringify(userInfo));
           self.currentUserSubject.next(userInfo);
-          self.router.navigate(['/bms/campaign']);
+          self.router.navigate(['/bms/excelexport']);
           document.body.className = 'hold-transition skin-blue sidebar-mini';
           window.dispatchEvent(new Event('resize'));
         }
@@ -52,7 +52,7 @@ export class AuthenticationService {
     userInfo.userId = 1
     localStorage.setItem('currentUser', JSON.stringify(userInfo));
     self.currentUserSubject.next(userInfo);
-    self.router.navigate(['/bms/campaign']);
+    self.router.navigate(['/bms/excelexport']);
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     window.dispatchEvent(new Event('resize'));
 

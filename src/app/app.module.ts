@@ -40,6 +40,8 @@ import { ClientSideCacheComponent } from './components/client-side-cache/client-
 
 import { SleepPreloadingStrategy } from './preloading/sleep.preloading.strategy';
 import { RoutePreloadingStrategy } from './preloading/route.preloading.strategy';
+import { ExcelExportComponent } from './components/excel-export/excel-export.component';
+import { ExcelExportStyleComponent } from './components/excel-export-style/excel-export-style.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,7 @@ import { RoutePreloadingStrategy } from './preloading/route.preloading.strategy'
     FetchJsonPipe,    
     DynamicImportModuleComponent, 
     PrefetchComponent, 
-    ClientSideCacheComponent
+    ClientSideCacheComponent, ExcelExportComponent, ExcelExportStyleComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +87,7 @@ import { RoutePreloadingStrategy } from './preloading/route.preloading.strategy'
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }, 
     { provide: HTTP_INTERCEPTORS, useClass: JwtErrorInterceptor, multi: true }, 
     DataService, SharedService, AlertService, PromissionguardGuard,DialogService, 
-    QuicklinkStrategy
+    QuicklinkStrategy,SleepPreloadingStrategy
 
   ],
   bootstrap: [AppComponent]

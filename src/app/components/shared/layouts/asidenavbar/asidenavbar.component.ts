@@ -19,7 +19,7 @@ export class AsidenavbarComponent implements OnInit {
   
   ngOnInit() {
     this.menus = [      
-      new Menu(1, 'Campaign Manager', '/bms/campaign', "fa fa-user fa-1x"),
+      new Menu(1, 'ExcelExport', '/bms/excelexport', "fa fa-user fa-1x"),      
       new Menu(2, 'Lazy loading Module', '/bms/lazyload', "fa fa-user fa-1x"),
       new Menu(3, 'Dynamic Import Module', '/bms/dynamic-import', "fa fa-user fa-1x"),
       // new Menu(2, 'DemoSelect', '/bms/select2Demo', "fa fa-pinterest fa-1x"),

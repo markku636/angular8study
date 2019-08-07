@@ -16,6 +16,7 @@ import { TodoComponent } from './components/todo/todo.component';
 import { DynamicImportModuleComponent } from './components/dynamic-import-module/dynamic-import-module.component';
 import { ClientSideCacheComponent } from './components/client-side-cache/client-side-cache.component';
 import { PrefetchComponent } from './components/prefetch/prefetch.component';
+import { ExcelExportComponent } from './components/excel-export/excel-export.component';
 
 // export function loadSevenStarModule(): any {
 //   return new Promise((resolve, reject) => {
@@ -35,9 +36,9 @@ const routes: Routes = [
   { path: 'ssologin', component: SSOLoginComponent },
   {
     path: 'bms', component: DefaultLayoutComponent, canActivate: [PromissionguardGuard], children: [
-      { path: 'campaign', component: CampaignComponent },      
+      { path: 'excelexport', component: ExcelExportComponent },      
       { path: 'lazyload',   
-      loadChildren : () => import('././components/lazyload/lazyload.module').then(mod => mod.LazyloadModule)
+      loadChildren : () => import('././components/lazyload/lazyload.module').then(mod => mod.LazyloadModule),data:{ preload:true }
       // loadChildren: './components/lazyload/lazyload.module#LazyloadModule' // before angular 7 
       },    
       { path: 'dynamic-import', component: DynamicImportModuleComponent },
@@ -64,7 +65,8 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: QuicklinkStrategy })],
+  imports: [RouterModule.forRoot(routes, {})],
+  // imports: [RouterModule.forRoot(routes, {preloadingStrategy:  QuicklinkStrategy})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -5,7 +5,7 @@ import { HttpClient }          from '@angular/common/http';
 
 @Pipe({
   name: 'todoDone',
-  pure: true
+  pure: false
 })
 export class TodoDonePipe implements PipeTransform {
 

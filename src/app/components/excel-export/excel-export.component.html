@@ -1,0 +1,1683 @@
+aoa_to_sheet converts an array of arrays of JS data to a worksheet.
+json_to_sheet converts an array of JS objects to a worksheet.
+table_to_sheet converts a DOM TABLE element to a worksheet.
+sheet_add_aoa adds an array of arrays of JS data to an existing worksheet.
+sheet_add_json adds an array of JS objects to an existing worksheet.
+Exporting:
+
+sheet_to_json converts a worksheet object to an array of JSON objects.
+sheet_to_csv generates delimiter-separated-values output.
+sheet_to_txt generates UTF16 formatted text.
+sheet_to_html generates HTML output.
+sheet_to_formulae generates a list of the formulae (with value fallbacks).
+
+<p> {{ table| json}}</p>
+
+<input type="button" value="json to excel export" (click)="onClick()" />
+
+<hr />
+
+<table class="table" cellspacing="0" cellpadding="0" border="0" style="padding: 0px;">
+    <colgroup>
+            <col width="5%">
+            <col width="10%">
+            <col width="19%">
+            <col>
+            <col width="9%">
+            <col width="10%">
+                <col width="9%">
+                    <col width="10%">
+    </colgroup>
+    <thead class="tableFloatingHeaderOriginal" style="position: static; margin-top: 0px; left: 8px; z-index: 3; width: 1886px; top: 0px;">
+            <tr class="thead">
+                <th style="">序號</th>
+                <th class="align-l" style="">時間</th>
+                <th class="align-l" style="">
+                    會員
+                        <span class="f icon-RealInfo" title="藍色為退水值-會員/代理/總代理/股東/大股東
+綠色為會員使用的盤口代碼"></span>
+                </th>
+                <th class="align-l" style="">
+                    下注內容
+                        <span class="f icon-RealInfo" title="紅色為代理/總代理/股東/大股東 之賠率調整值
+藍色為公司自定盤口調整值-會員/代理/總代理/股東/大股東"></span>
+                    <!-- WagerDetail -->
+                        <span class="detail-wrapper" id="wagerDetailDiv">
+                            <a id="btnWagerDetail" onclick="ToggleWagerDetail()" href="javascript:void(0);" class="detail-show">關閉</a>
+                            <span class="lbl-detail">注單詳細</span>
+                            <input class="hidden" type="checkbox" id="cbWagerDetail">
+                        </span>
+                </th>
+                <th class="align-r" style="">下注金額</th>
+                <th class="align-r" style="">可贏金額</th>
+                    <th style="">IP</th>
+                                        <th class="align-l" style="">
+                        <div class="div-fun-cancel">
+                            操作<input id="cbCancelAll" type="checkbox" class="CancelAll">
+                            <a id="btnBatchCancel" class="icon-link batchCancel-sm" href="javascript:void(0);">註銷</a>
+                        </div>
+                    </th>
+            </tr>
+    </thead><thead class="tableFloatingHeader" style="opacity: 0; display: none;">
+            <tr class="thead">
+                <th>序號</th>
+                <th class="align-l">時間</th>
+                <th class="align-l">
+                    會員
+                        <span class="f icon-RealInfo" title="藍色為退水值-會員/代理/總代理/股東/大股東
+綠色為會員使用的盤口代碼"></span>
+                </th>
+                <th class="align-l">
+                    下注內容
+                        <span class="f icon-RealInfo" title="紅色為代理/總代理/股東/大股東 之賠率調整值
+藍色為公司自定盤口調整值-會員/代理/總代理/股東/大股東"></span>
+                    <!-- WagerDetail -->
+                        <span class="detail-wrapper" id="wagerDetailDiv">
+                            <a id="btnWagerDetail" onclick="ToggleWagerDetail()" href="javascript:void(0);" class="detail-show">關閉</a>
+                            <span class="lbl-detail">注單詳細</span>
+                            <input class="hidden" type="checkbox" id="cbWagerDetail">
+                        </span>
+                </th>
+                <th class="align-r">下注金額</th>
+                <th class="align-r">可贏金額</th>
+                    <th>IP</th>
+                                        <th class="align-l">
+                        <div class="div-fun-cancel">
+                            操作<input id="cbCancelAll" type="checkbox" class="CancelAll">
+                            <a id="btnBatchCancel" class="icon-link batchCancel-sm" href="javascript:void(0);">註銷</a>
+                        </div>
+                    </th>
+            </tr>
+    </thead>
+    <tbody>
+                <tr id="row_1052799" class="o">
+                    <td class="align-c">1</td>
+                    <td class="align-l">2019-08-02 <br> 15:59:34</td>
+                    <td>
+                        sayaku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021152966&nbsp;</p>
+                                                         <p class="green">9951-Z7NE-Z7NX-Z7N3-Z7NT&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼單雙</span>
+                                        <span class="selection">單</span>
+                                        <span class="at">@</span> <span class="odds">1.93</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">127.0.0.1                               </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052799" type="checkbox" class="cancel-sm"><a id="1052799" wagerno="1908021152966" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052798" class="e">
+                    <td class="align-c">2</td>
+                    <td class="align-l">2019-08-02 <br> 15:39:28</td>
+                    <td>
+                        sayaku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022935992&nbsp;</p>
+                                                         <p class="green">9951-Z7NE-Z7NX-Z7N3-Z7NT&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼單雙</span>
+                                        <span class="selection">單</span>
+                                        <span class="at">@</span> <span class="odds">1.93</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">127.0.0.1                               </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052798" type="checkbox" class="cancel-sm"><a id="1052798" wagerno="1908022935992" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052797" class="o">
+                    <td class="align-c">3</td>
+                    <td class="align-l">2019-08-02 <br> 15:35:18</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022157330&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">26</span>
+                                        <span class="at">@</span> <span class="odds">39</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052797" type="checkbox" class="cancel-sm"><a id="1052797" wagerno="1908022157330" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052796" class="e">
+                    <td class="align-c">4</td>
+                    <td class="align-l">2019-08-02 <br> 15:35:11</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021403451&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">01</span>
+                                        <span class="at">@</span> <span class="odds">9</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052796" type="checkbox" class="cancel-sm"><a id="1052796" wagerno="1908021403451" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052795" class="o">
+                    <td class="align-c">5</td>
+                    <td class="align-l">2019-08-02 <br> 15:35:02</td>
+                    <td>
+                        wbcmb
+                        (<span class="blue">10/10/14.1/15/24.8</span>)&nbsp;<p>1908021167212&nbsp;</p>
+                                                         <p class="green">YH86-A35L-A1ZL-AMU6-ZPXG&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼B</span>
+                                        <span class="selection">12</span>
+                                        <span class="at">@</span> <span class="odds">38.994</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">100.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.103                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052795" type="checkbox" class="cancel-sm"><a id="1052795" wagerno="1908021167212" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052794" class="e">
+                    <td class="align-c">6</td>
+                    <td class="align-l">2019-08-02 <br> 15:34:59</td>
+                    <td>
+                        wbcmb
+                        (<span class="blue">10/10/13.3/13.8/24.8</span>)&nbsp;<p>1908021144270&nbsp;</p>
+                                                         <p class="green">YH86-A35L-A1ZL-AMU6-ZPXG&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">12</span>
+                                        <span class="at">@</span> <span class="odds">31.104</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">100.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.103                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052794" type="checkbox" class="cancel-sm"><a id="1052794" wagerno="1908021144270" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052793" class="o">
+                    <td class="align-c">7</td>
+                    <td class="align-l">2019-08-02 <br> 15:24:14</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022115315&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">11</span>
+                                        <span class="at">@</span> <span class="odds">39</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052793" type="checkbox" class="cancel-sm"><a id="1052793" wagerno="1908022115315" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052792" class="e">
+                    <td class="align-c">8</td>
+                    <td class="align-l">2019-08-02 <br> 15:24:11</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022470801&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">01</span>
+                                        <span class="at">@</span> <span class="odds">35</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052792" type="checkbox" class="cancel-sm"><a id="1052792" wagerno="1908022470801" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052791" class="o">
+                    <td class="align-c">9</td>
+                    <td class="align-l">2019-08-02 <br> 15:22:11</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022169189&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼大小</span>
+                                        <span class="selection">大</span>
+                                        <span class="at">@</span> <span class="odds">1.5</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052791" type="checkbox" class="cancel-sm"><a id="1052791" wagerno="1908022169189" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052790" class="e">
+                    <td class="align-c">10</td>
+                    <td class="align-l">2019-08-02 <br> 15:22:11</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022946016&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼單雙</span>
+                                        <span class="selection">單</span>
+                                        <span class="at">@</span> <span class="odds">2</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052790" type="checkbox" class="cancel-sm"><a id="1052790" wagerno="1908022946016" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052789" class="o">
+                    <td class="align-c">11</td>
+                    <td class="align-l">2019-08-02 <br> 15:20:53</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022113986&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">24</span>
+                                        <span class="at">@</span> <span class="odds">39</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">33.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052789" type="checkbox" class="cancel-sm"><a id="1052789" wagerno="1908022113986" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052788" class="e">
+                    <td class="align-c">12</td>
+                    <td class="align-l">2019-08-02 <br> 15:20:48</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021351022&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">12</span>
+                                        <span class="at">@</span> <span class="odds">39</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">22.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052788" type="checkbox" class="cancel-sm"><a id="1052788" wagerno="1908021351022" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052787" class="o">
+                    <td class="align-c">13</td>
+                    <td class="align-l">2019-08-02 <br> 15:20:44</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021953766&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">01</span>
+                                        <span class="at">@</span> <span class="odds">35</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052787" type="checkbox" class="cancel-sm"><a id="1052787" wagerno="1908021953766" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052786" class="e">
+                    <td class="align-c">14</td>
+                    <td class="align-l">2019-08-02 <br> 15:07:37</td>
+                    <td>
+                        NoLottoMem
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021903596&nbsp;</p>
+                                                         <p class="green">AZ01-DF56-DFFB-DFF1-DF7W&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">連碼 </span>
+                                    <span class="selection"> 三全中 </span><span class="at">@</span><span class="odds"> 920</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">11, 12, 13</span></p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.177                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052786" type="checkbox" class="cancel-sm"><a id="1052786" wagerno="1908021903596" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052785" class="o">
+                    <td class="align-c">15</td>
+                    <td class="align-l">2019-08-02 <br> 15:07:30</td>
+                    <td>
+                        NoLottoMem
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021660490&nbsp;</p>
+                                                         <p class="green">AZ01-DF56-DFFB-DFF1-DF7W&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">41</span>
+                                        <span class="at">@</span> <span class="odds">39</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.177                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052785" type="checkbox" class="cancel-sm"><a id="1052785" wagerno="1908021660490" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052784" class="e">
+                    <td class="align-c">16</td>
+                    <td class="align-l">2019-08-02 <br> 15:06:30</td>
+                    <td>
+                        NoLottoMem
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021401331&nbsp;</p>
+                                                         <p class="green">AZ01-DF56-DFFB-DFF1-DF7W&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">01</span>
+                                        <span class="at">@</span> <span class="odds">37</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.177                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052784" type="checkbox" class="cancel-sm"><a id="1052784" wagerno="1908021401331" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052783" class="o">
+                    <td class="align-c">17</td>
+                    <td class="align-l">2019-08-02 <br> 15:04:32</td>
+                    <td>
+                        sayaku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021244482&nbsp;</p>
+                                                         <p class="green">9951-Z7NE-Z7NX-Z7N3-Z7NT&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼大小</span>
+                                        <span class="selection">大</span>
+                                        <span class="at">@</span> <span class="odds">1.43</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">127.0.0.1                               </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052783" type="checkbox" class="cancel-sm"><a id="1052783" wagerno="1908021244482" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052782" class="e">
+                    <td class="align-c">18</td>
+                    <td class="align-l">2019-08-02 <br> 15:03:20</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021698359&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">01</span>
+                                        <span class="at">@</span> <span class="odds">37</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052782" type="checkbox" class="cancel-sm"><a id="1052782" wagerno="1908021698359" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052781" class="o">
+                    <td class="align-c">19</td>
+                    <td class="align-l">2019-08-02 <br> 15:01:16</td>
+                    <td>
+                        sayaku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022247873&nbsp;</p>
+                                                         <p class="green">9951-Z7NE-Z7NX-Z7N3-Z7NT&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼大小</span>
+                                        <span class="selection">大</span>
+                                        <span class="at">@</span> <span class="odds">1.43</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">127.0.0.1                               </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052781" type="checkbox" class="cancel-sm"><a id="1052781" wagerno="1908022247873" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052780" class="e">
+                    <td class="align-c">20</td>
+                    <td class="align-l">2019-08-02 <br> 15:01:10</td>
+                    <td>
+                        sayaku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022284346&nbsp;</p>
+                                                         <p class="green">9951-Z7NE-Z7NX-Z7N3-Z7NT&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼大小</span>
+                                        <span class="selection">大</span>
+                                        <span class="at">@</span> <span class="odds">1.43</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">10.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">127.0.0.1                               </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052780" type="checkbox" class="cancel-sm"><a id="1052780" wagerno="1908022284346" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052779" class="o">
+                    <td class="align-c">21</td>
+                    <td class="align-l">2019-08-02 <br> 14:58:53</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021831951&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">01</span>
+                                        <span class="at">@</span> <span class="odds">37</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052779" type="checkbox" class="cancel-sm"><a id="1052779" wagerno="1908021831951" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052778" class="e">
+                    <td class="align-c">22</td>
+                    <td class="align-l">2019-08-02 <br> 14:54:32</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021008472&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">正碼特 </span>
+                                        <span class="selection"> 正碼特二 01</span>
+                                        <span class="at">@</span> <span class="odds">42</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052778" type="checkbox" class="cancel-sm"><a id="1052778" wagerno="1908021008472" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052777" class="o">
+                    <td class="align-c">23</td>
+                    <td class="align-l">2019-08-02 <br> 14:54:27</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022158379&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">正碼特 </span>
+                                        <span class="selection"> 正碼特一 11</span>
+                                        <span class="at">@</span> <span class="odds">42</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">22.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052777" type="checkbox" class="cancel-sm"><a id="1052777" wagerno="1908022158379" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052776" class="e">
+                    <td class="align-c">24</td>
+                    <td class="align-l">2019-08-02 <br> 14:54:23</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021764485&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">正碼特 </span>
+                                        <span class="selection"> 正碼特一 01</span>
+                                        <span class="at">@</span> <span class="odds">42</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052776" type="checkbox" class="cancel-sm"><a id="1052776" wagerno="1908021764485" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052775" class="o">
+                    <td class="align-c">25</td>
+                    <td class="align-l">2019-08-02 <br> 14:51:50</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021100728&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">11</span>
+                                        <span class="at">@</span> <span class="odds">39</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052775" type="checkbox" class="cancel-sm"><a id="1052775" wagerno="1908021100728" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052774" class="e">
+                    <td class="align-c">26</td>
+                    <td class="align-l">2019-08-02 <br> 14:51:50</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021047242&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">特碼A</span>
+                                        <span class="selection">01</span>
+                                        <span class="at">@</span> <span class="odds">37</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052774" type="checkbox" class="cancel-sm"><a id="1052774" wagerno="1908021047242" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052773" class="o">
+                    <td class="align-c">27</td>
+                    <td class="align-l">2019-08-02 <br> 14:51:30</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021551831&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">正肖</span>
+                                        <span class="selection">鼠</span>
+                                        <span class="at">@</span> <span class="odds">2.15</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052773" type="checkbox" class="cancel-sm"><a id="1052773" wagerno="1908021551831" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052772" class="e">
+                    <td class="align-c">28</td>
+                    <td class="align-l">2019-08-02 <br> 14:51:22</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022283469&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                            <p class="bet-sel-c">
+                                <span class="bet-type">半波單雙</span>
+                                            <span class="red">紅單</span>
+                                        <span class="at">@</span> <span class="odds">6</span>
+
+                            </p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052772" type="checkbox" class="cancel-sm"><a id="1052772" wagerno="1908022283469" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052771" class="o">
+                    <td class="align-c">29</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022870421&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">7(<span class="red">7.3</span>), 8(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052771" type="checkbox" class="cancel-sm"><a id="1052771" wagerno="1908022870421" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052770" class="e">
+                    <td class="align-c">30</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021865866&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">6(<span class="red">7.3</span>), 8(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052770" type="checkbox" class="cancel-sm"><a id="1052770" wagerno="1908021865866" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052769" class="o">
+                    <td class="align-c">31</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022885302&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">6(<span class="red">7.3</span>), 7(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052769" type="checkbox" class="cancel-sm"><a id="1052769" wagerno="1908022885302" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052768" class="e">
+                    <td class="align-c">32</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021157282&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">6(<span class="red">7.3</span>), 7(<span class="red">7.3</span>), 8(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052768" type="checkbox" class="cancel-sm"><a id="1052768" wagerno="1908021157282" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052767" class="o">
+                    <td class="align-c">33</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022860340&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">5(<span class="red">7.3</span>), 8(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052767" type="checkbox" class="cancel-sm"><a id="1052767" wagerno="1908022860340" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052766" class="e">
+                    <td class="align-c">34</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022552851&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">5(<span class="red">7.3</span>), 7(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052766" type="checkbox" class="cancel-sm"><a id="1052766" wagerno="1908022552851" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052765" class="o">
+                    <td class="align-c">35</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021697644&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">5(<span class="red">7.3</span>), 7(<span class="red">7.3</span>), 8(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052765" type="checkbox" class="cancel-sm"><a id="1052765" wagerno="1908021697644" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052764" class="e">
+                    <td class="align-c">36</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022535079&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">5(<span class="red">7.3</span>), 6(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052764" type="checkbox" class="cancel-sm"><a id="1052764" wagerno="1908022535079" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052763" class="o">
+                    <td class="align-c">37</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021438764&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">5(<span class="red">7.3</span>), 6(<span class="red">7.3</span>), 8(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052763" type="checkbox" class="cancel-sm"><a id="1052763" wagerno="1908021438764" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052762" class="e">
+                    <td class="align-c">38</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021606313&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">5(<span class="red">7.3</span>), 6(<span class="red">7.3</span>), 7(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052762" type="checkbox" class="cancel-sm"><a id="1052762" wagerno="1908021606313" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052761" class="o">
+                    <td class="align-c">39</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021807936&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 8(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052761" type="checkbox" class="cancel-sm"><a id="1052761" wagerno="1908021807936" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052760" class="e">
+                    <td class="align-c">40</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022618659&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 7(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052760" type="checkbox" class="cancel-sm"><a id="1052760" wagerno="1908022618659" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052759" class="o">
+                    <td class="align-c">41</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022652976&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 7(<span class="red">7.3</span>), 8(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052759" type="checkbox" class="cancel-sm"><a id="1052759" wagerno="1908022652976" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052758" class="e">
+                    <td class="align-c">42</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022508180&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 6(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052758" type="checkbox" class="cancel-sm"><a id="1052758" wagerno="1908022508180" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052757" class="o">
+                    <td class="align-c">43</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908021360709&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 6(<span class="red">7.3</span>), 8(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052757" type="checkbox" class="cancel-sm"><a id="1052757" wagerno="1908021360709" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052756" class="e">
+                    <td class="align-c">44</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022097728&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 6(<span class="red">7.3</span>), 7(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052756" type="checkbox" class="cancel-sm"><a id="1052756" wagerno="1908022097728" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052755" class="o">
+                    <td class="align-c">45</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022909149&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 5(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052755" type="checkbox" class="cancel-sm"><a id="1052755" wagerno="1908022909149" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052754" class="e">
+                    <td class="align-c">46</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022312491&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 5(<span class="red">7.3</span>), 8(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052754" type="checkbox" class="cancel-sm"><a id="1052754" wagerno="1908022312491" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052753" class="o">
+                    <td class="align-c">47</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022814009&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 5(<span class="red">7.3</span>), 7(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052753" type="checkbox" class="cancel-sm"><a id="1052753" wagerno="1908022814009" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052752" class="e">
+                    <td class="align-c">48</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022448371&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">3(<span class="red">7.3</span>), 5(<span class="red">7.3</span>), 6(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052752" type="checkbox" class="cancel-sm"><a id="1052752" wagerno="1908022448371" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052751" class="o">
+                    <td class="align-c">49</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022417057&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">1(<span class="red">7.3</span>), 8(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052751" type="checkbox" class="cancel-sm"><a id="1052751" wagerno="1908022417057" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+                <tr id="row_1052750" class="e">
+                    <td class="align-c">50</td>
+                    <td class="align-l">2019-08-02 <br> 14:49:51</td>
+                    <td>
+                        markku
+                        (<span class="blue">25/25/25/25/25</span>)&nbsp;<p>1908022330646&nbsp;</p>
+                                                         <p class="green">AZ01-Z01J-Z01M-Z0UF-Z0US&nbsp;</p>
+                        </td>
+            <td class="align-l">
+                <p>
+                    期數: 236 &nbsp;                    </p>
+                    <p class="bet-sel-c">
+                        <span class="bet-type">尾數連 </span>
+                                <span class="selection"> 三尾碰</span>
+
+                        
+                    </p>
+                    <p class="bet-sel-c"><span class="combo-display">1(<span class="red">7.3</span>), 7(<span class="red">7.3</span>), 9(<span class="red">7.3</span>)</span></p>
+            </td>
+            <td class=" align-r">11.00</td>
+
+                <td class="align-r">-</td>
+
+
+                <td class="align-c">172.16.50.173                           </td>
+                    <td class="align-l">
+                                <ul class="btn-grp">
+                                    <li class="first-item">
+                                    </li><li class="first-item"><input id="cbCancel_1052750" type="checkbox" class="cancel-sm"><a id="1052750" wagerno="1908022330646" class="icon-link cancel-sm" href="javascript:void(0);">註銷</a></li>
+                                </ul>
+                    </td>
+        </tr>
+        <tr class="total">
+            <td class="align-r total-txt" colspan="4">本頁總合</td>
+            <td class=" align-r">764.00</td>
+            <td class=" align-r">0.00</td>
+                <td class="align-r" colspan="2"></td>
+        </tr>
+        <tr class="total">
+            <td class="align-r total-txt" colspan="4">全部總合</td>
+            <td class=" align-r">22,020.00</td>
+            <td class="red align-r">-12,808.00</td>
+                <td class="align-r" colspan="2"></td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<input type="button" value="table to excel export" (click)="onClick2()" />
