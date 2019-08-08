@@ -47,7 +47,12 @@
               "src/assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",
               "src/assets/bower_components/chart.js/Chart.js",
               "src/assets/dist/js/demo.js",
-              "src/assets/plugins/select2/select2.min.js"
+              "src/assets/plugins/select2/select2.min.js",              
+              "src/assets/plugins/xlsxstyle/jszip.js",
+              "src/assets/plugins/xlsxstyle/xlsx.js"
+              
+              
+              
             ]
           },
           "configurations": {

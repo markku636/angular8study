@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkBook, utils, writeFile, WorkSheet } from 'xlsx';
+// import { WorkBook, utils, writeFile, WorkSheet } from 'xlsx';
+declare var XLSX : any; 
+
+
 
 
 @Component({
@@ -35,17 +38,18 @@ export class ExcelExportComponent implements OnInit {
     /* generate worksheet */
     // const ws: WorkSheet = utils.json_to_sheet(json);
     debugger;
-    const ws: WorkSheet = utils.aoa_to_sheet(this.setupAoa(this.table));
+    
+    const ws = XLSX.utils.aoa_to_sheet(this.setupAoa(this.table));
 
     let a1 = ws['A1']; // 返回 { v:值 'hello', t型態: 's', ... } https://segmentfault.com/a/1190000018077543
 
     ws['A1'].v = 'sakura';
     ws['A1'].t = 's';
     /* generate workbook and add the worksheet */
-    const wb: WorkBook = utils.book_new();
-    utils.book_append_sheet(wb, ws, 'Sheet1');
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     /* save to file */
-    writeFile(wb, 'SheetJS.xlsx');
+    XLSX.writeFile(wb, 'SheetJS.xlsx');
   }
   private setupAoa(table) {
     var jsonArray = [];
@@ -62,8 +66,8 @@ export class ExcelExportComponent implements OnInit {
     debugger
     var ele = document.getElementsByClassName('table')[0];
 
-    var ws: WorkSheet = utils.table_to_sheet(ele);
-    var wb: WorkBook = utils.book_new();
+    var ws = XLSX.utils.table_to_sheet(ele);
+    var wb = XLSX.utils.book_new();
 
   // 寬度
     var wscols = [
@@ -113,15 +117,24 @@ export class ExcelExportComponent implements OnInit {
         },
         alignment: {
           horizontal: 'center'   //水平居中对其
+        },
+        border:borderAll,
+        fill : {
+          fgColor : {
+              theme : 8,
+              tint : 0.3999755851924192,
+              rgb : '08CB26'
+          }
         }
       }
     }
+    // 不能改樣式 及border 
     // utils.cell_add_comment(ws['A1'],"aaa")
     ws['D4'] = { t: 'n', v: 9999999999 }
     
     ws['A99'] = { t: 'n', v: 9999999999 } 
 
-    var range = utils.decode_range(ws["!ref"]); // 索引從0開始
+    var range = XLSX.utils.decode_range(ws["!ref"]); // 索引從0開始
 
 
     // 調整range 方式1(匯出會依據Range)
@@ -152,13 +165,13 @@ export class ExcelExportComponent implements OnInit {
     
     
 
-    utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
 
 
 
     /* save to file */
-    writeFile(wb, 'SheetJS.xlsx');
+    XLSX.writeFile(wb, 'SheetJS.xlsx');
   }
 
 }
